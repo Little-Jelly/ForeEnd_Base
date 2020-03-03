@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script>
+			function validate(){
+				var name_input = 'Jimmy';
+				var age_input;
+				return name_input && age_input;
+			}
+//			if(validate()){
+//				console.log('pass');
+//			}else{
+//				console.log('fail');
+//			}
+			var myObject = {};
+			var objectWithProperties = {
+				"property1":"a string value",
+				"myObjectAsProperty":"myObject"
+			}
+			console.log(objectWithProperties);
+			console.log(objectWithProperties['property1']);
+			console.log(objectWithProperties.property1);
+			
+			var species = {
+				'mammals':{
+					'biped':{
+						'monkey' : 'George',
+						'human' : 'Tim'
+					}
+				}
+			}
+			console.log(species.mammals.biped.human);
+			
+			var obj = {
+				'property1':1,
+				'property2':2
+			}
+			var i;
+			for ( i in obj ) {
+				console.log( i )
+			}
+			
+			function calc( x ){
+				return x*2;
+			}
+			console.log( calc(10) );
+			
+			var x = 2;
+			function calc2(){
+				x = x*2;
+			}
+			console.log( x );
+			var calc3 = function(x){
+				return x*2;
+			}
+			console.log(calc3(50));
+			
+			function reporter( fn ){
+				console.log( "the return value of your function is " + fn() );
+			}
+			reporter( function(){} );
+			reporter( function(){ return "a simple string"} );
+			
+			function calc4(){
+				return 4 * 2;
+			}
+			reporter( calc4 );
+			
+			
+			(function( x,y ){
+				console.log( x+y );
+			})( 5,6 );
+			
+			var message = (function( x ){
+				return function(){
+					console.log( "x is "+x);
+				}
+			})( x );
+			message();
+			x = 14;
+			console.log( x );
+			message();
+			
+			console.log(this);
+			
+			function getFunction(value){
+				return function(value){
+					return value;
+				}
+			}
+			var a = getFunction(),
+				b = getFunction(),
+				c = getFunction();
+			console.log(a(0));
+			console.log(b(1));
+			console.log(c(2));
+			console.log(a === b );
+			
+			obj = {};
+			var count = 11;
+			obj.method = function(){
+				var that = this;
+				this.counter = 0;
+				
+				var count = function(){
+					that.counter += 1;
+					console.log(that.counter);
+				}
+				
+				count();
+				count();
+				console.log(this.counter);
+			}
+			obj.method();
+			console.log(this.count);
+			
+			function TimeMachine(){
+				var destination = 'October 5, 1995';
+				this.getDestination = function(){
+					return destination;
+				}
+			}
+			var delorean = new TimeMachine();
+			console.log(delorean.getDestination());
+			
+			TIMEMACHINE = {};
+			TIMEMACHINE.createDelorean = (function(){
+				var destination = '';
+				var model = '';
+				var fuel = '';
+				return{
+					setDestination: function(dest){
+						this.destination = dest;
+					},
+					setModel: function(model){
+						this.model = model;
+					},
+					setFuel: function(fuel){
+						this.fuel = fuel;
+					},
+					getDestination: function(){
+						return this.destination;
+					},
+					getModel: function(){
+						return this.model;
+					},
+					getFuel: function(){
+						return this.fuel;
+					},
+					toString: function(){
+						console.log( '-Model: ' +this.getModel() + ' -Fuel Type:' +
+							this.getFuel() + ' -Headed:' + this.getDestination());
+					}
+				};
+			});
+			var myTimeMachine = TIMEMACHINE.createDelorean();
+			myTimeMachine.setModel('1985 Delorean');
+			myTimeMachine.setFuel('plutonium');
+			myTimeMachine.setDestination('October 5,1995');
+			myTimeMachine.toString();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
