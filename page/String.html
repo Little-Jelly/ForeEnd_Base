@@ -162,6 +162,14 @@
 			myTimeMachine.setDestination('October 5,1995');
 			myTimeMachine.toString();
 			
+
+			String.prototype.boolean = function(){
+				return "true" == this;
+			};
+			var t = 'true'.boolean();
+			var f = 'false'.boolean();
+			console.log(t);
+			console.log(f);
 		</script>
 	</head>
 	<body>
