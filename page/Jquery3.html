@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<style type="text/css">
+			#animation{
+				width: 200px;
+				height: 200px;
+				background: #ccc;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#animation").show("slow");
+				$("#animation").queue(function(){		// 设置动作
+					$(this).animate({width:'+=400'}, 1000);
+					$(this).dequeue();					// 取消动作
+				});
+			});
+			
+			var phrase1 = "		1. Either this wallpaper goes		";
+			var phrase2 = "	 or I go			";
+			var quote = $.trim(phrase1) + " " + $.trim(phrase2);	// 移除字符串首尾的空格字符
+			console.log(quote);
+			
+			console.log($.contains($("head")[0], $("title")[0]));		// 检查子节点是否存在
+			
+			console.log($.now());			// 获取当前时间
+			
+			console.log($.support.ajax);		// 检查浏览器是否支持ajax
+			
+			
+		</script>
+	</head>
+	<body>
+
+		<div id="animation" style="display:none">7878787</div>
+	</body>
+</html>

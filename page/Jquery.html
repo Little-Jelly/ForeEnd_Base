@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script>
+			// jQuery核心知识的base1
+			
+			var mailman = {};
+			mailman.letters = 100;
+			console.log($.isEmptyObject(mailman));
+			
+			
+			var obj1 = {"1":"property 1"};
+			var obj2 = {"2":"property 2"};
+			var obj3 = {"3":"property 3"};
+			$.extend(obj1, obj2, obj3);	// 将一个或者多个对象的属性合并到一个目标对象中
+			console.log(obj1["1"]);
+			
+//			var clonedObject = $.extend(target object, object1);  // 执行对象的克隆
+//			var clonedObject = $.extend(true, {}, anObject);	// 执行对象深度合并
+			
+			var clonedjq = $.extend(true, {}, $);
+			console.log($.type(clonedjq));
+			var jqArray = $.makeArray(clonedjq);	// 创建一个数组：makeArray()
+			console.log(jqArray);
+			
+			var spooks = ["wraiths", "vampires", "lichs"];
+			var nums = [1, 2, 3];
+			var mergeArrays = $.merge(spooks, nums);	// 合并两个数组
+			console.log(mergeArrays);	
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
