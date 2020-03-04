@@ -4,16 +4,16 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<style type="text/css">
-			.class1{
+			.class1 {
 				color: "white";
-				background-color: "black";
+				background-color: "black"!important;
 				width: 200px;
 				height: 100px;
 				font-size: 50;
 			}
-			.class2{
+			.class2 {
 				color: "yellow";
-				background-color: "red";
+				background-color: "red"!important;
 				width: 100px;
 				height: 200px;
 				font-size: 100;
@@ -21,12 +21,16 @@
 		</style>
 		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
 		<script type="text/javascript">
-			$(function(){
-				$("#myDiv")
-					.addClass("class1")
-						.find("p#blah")
-							.removeClass("class1")
-								.addClass("class1");
+//			$(function(){
+//				console.log("888888");
+//				var test = $("div");
+//				console.log(test);
+//			});
+//			$(document).ready(function(){			// 在所有DOM元素被加载完成之后，会立即执行ready，这三个写法是一致的	
+//				console.log("ooooooo");
+//			});
+			$().ready(function(){				
+				console.log("999999999");
 			});
 		</script>
 	</head>
