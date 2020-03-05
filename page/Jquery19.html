@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完DOM所有元素之后，执行的函数
+			$(function(){
+				// 获取<li>所有元素集合的包装对象listElements
+				var listElements = $("li");
+				// 将listElements集合中，
+				// 第四个开外的元素，字体颜色设置为绿色
+				// 地四个以内的元素，字体颜色设置为红色
+				listElements
+					.filter(":gt(3)")			// 返回listElements集合中的第四个以后的元素
+					.css("color", "green")		// 将当前的集合中的元素的字体颜色设置为绿色
+				.end()							// 返回到集合对象listElements
+					.filter(":lt(3)")			// 返回listElements集合中的第四个以内的额元素
+					.css("color", "red")		// 将当前的集合中的元素的字体颜色设置为红色
+				.end();							// 返回到集合对象listElements
+				// 输出元素listElements的长度
+				console.log(listElements.length);
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>eggs</li>
+			<li>bacon</li>
+			<li>ham</li>
+			<li>cheese</li>
+			<li>juice</li>
+			<li>sausage</li>
+		</ul>
+	</body>
+</html>

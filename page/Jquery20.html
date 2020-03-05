@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完DOM所有元素之后，执行函数
+			$(function(){
+				// 获取id为winners的所有<li>元素的集合，并将它转换成数组winners
+				var winners = $("#winners li").toArray();
+				// 遍历winners的所有元素，并且在控制台中进行输出
+				for( var i = 0, test = winners.length; i < test; i++){
+					console.log(winners[i].innerHTML);
+				}
+				// 颠倒winners的顺序
+				winners = winners.reverse();
+				// 遍历winners的所有元素，并且在控制台中进行输出
+				for( var i = 0, test = winners.length; i < test; i++){
+					console.log(winners[i].innerHTML);
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<ol id="winners">
+			<li>Eddy Merckx</li>
+			<li>Bernard Hinault</li>
+			<li>Andre Leducq</li>
+			<li>Lance Armstrong</li>
+			<li>Andre Darrigate</li>
+			<li>Mark Cavendish</li>			
+			<li>Nicolas Frantz</li>			
+		</ol>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM元素之后，执行的函数
+			$(function(){
+				// 获取<div>的子内容
+				var content = $("div").html();
+				// 将这些子内容输出到控制台
+				console.log(content);
+				// 在<div>中增加<p>标签，标签的文本内容为RED，字体颜色为红色
+				$("div").html("<p style='color:red;'>RED</p>");
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul>				
+			</ul>
+		</div>
+	</body>
+</html>

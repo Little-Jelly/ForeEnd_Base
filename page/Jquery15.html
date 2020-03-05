@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完DOM元素之后需要执行的函数
+			$(function(){
+				// 获取到<li>元素集合的包装对象到listElements
+				var listElements = $("li");
+				// 获取listElements的第一个子元素到firstE1
+				var firstE1 = listElements.first();
+				// 获取listElements的最后一个子元素到lastE1
+				var lastE1 = listElements.last();
+				// 在控制台输出firstE1的文本内容
+				console.log(firstE1.html());
+				// 在控制台输出firstE1的长度
+				console.log(firstE1.length)
+				// 在控制台输出lastE1的文本内容
+				console.log(lastE1.html());
+				// 在控制台输出lastE1的的长度
+				console.log(lastE1.length);
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>eggs</li>
+			<li>bacon</li>
+			<li>ham</li> 
+		</ul>
+	</body>
+</html>

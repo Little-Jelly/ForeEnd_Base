@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完DOM所有元素之后，执行的函数
+			$(function(){
+				// 获取<li>元素集合的包装对象listElements
+				var listElements = $("li");
+				// 获取listElements的第二个元素secondE1
+				var secondE1 = listElements.eq(1);			// eq()获取对象包装集中特定索引位置的元素
+				// 获取listElements的第四个元素forthE1
+				var forthE1 = listElements.eq(3);
+				// 在控制台上输出secondE1和forthE1
+				console.log(secondE1.html());
+				console.log(forthE1.html());
+			});
+			
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>eggs</li>
+			<li>bacon</li>
+			<li>ham</li>
+			<li>cheese</li>
+			<li>juice</li>
+			<li>sausage</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.titleText{
+				color: green;
+				font-family: arial;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完所有的DOM元素之后，执行的函数
+			$(function(){
+				$("<h1>Have A Nice Day</h1>")
+					.appendTo("body")
+					.attr("class", "titleText");
+			});			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

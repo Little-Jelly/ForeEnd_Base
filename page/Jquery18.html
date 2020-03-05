@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完DOM所有元素之后，执行的函数
+			$(function(){
+				// 获取到id为"item2"的元素到变量item2
+				var item2 = $("#item2");
+				// 在控制台中输出item2在<li>的子元素中的索引值
+				console.log($("li").index(item2));
+			});
+		</script>
+		
+	
+	</head>
+	<body>
+		<ul>
+			<li id="item0">eggs0</li>
+			<li id="item1">bacon</li>
+			<li id="item2">ham</li>
+			<li id="item3">cheese</li>
+			<li id="item4">juice</li>
+			<li id="item5">sausage</li>
+		</ul>
+	</body>
+</html>

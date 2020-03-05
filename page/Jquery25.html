@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.blue {
+				background-color: blue;
+			}
+			.red {
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM元素之后，执行的函数
+			$(function(){
+				// 设置id为i_am_blue的元素<p>，给它添加属性
+				$("p#i_am_blue").attr("class", "red");
+				// 获取id为i_am_blue的元素<p>，并且获取它的属性到attribute				
+				var attribute = $("p#i_am_blue").attr("id");
+				// 在控制台中输出attribute的值
+				console.log(attribute);
+			});
+		</script>
+	</head>
+	<body>
+		<p id="i_am_blue">
+			I am Blue
+		</p>
+	</body>
+</html>
