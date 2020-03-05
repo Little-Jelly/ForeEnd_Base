@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script>
+			$(document).ready(function(){
+				var wrappedElements = $("ul#myList");
+				console.log(wrappedElements.length);
+				var wrappedElements2 = $("ul");
+				console.log(wrappedElements2.length);
+				var wrappedElements3 = $("ul#idle");
+				console.log(wrappedElements3.length);
+				var allElements = $("*");
+				console.log(allElements.length);
+			});
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<ul id="myList">
+				<li>foo</li>
+				<li>bar</li>
+			</ul>
+			<ul id="idle">
+				<li>lalalal</li>
+				<li>hahaha</li>
+			</ul>
+		</div>
+	</body>
+</html>

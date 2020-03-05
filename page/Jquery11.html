@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var n1 = $("input").length;
+				var n2 = $(":input").length;
+				var n3 = $("form > *").length;		// 查询form的所有子元素
+				var n4 = $(":text").length;
+				var n5 = $("input[type='text']").length;
+				console.log(n1 + "," + n2 + "," + n3 + "," + n4 + "," + n5)
+				console.log($("form > *"));
+				
+				var numInv = $(":text:hidden").length;		// 选择所有隐藏元素
+				var numVis = $(":text:visible").length;		// 选择所有可见元素
+				console.log(numInv);
+				console.log(numVis);
+				
+				var jennies = $("p:contains('jenny')").length;		// （内容过滤器），所选择的元素是否包含指定文本字符串：:contains()
+				console.log(jennies);
+				
+				var hasDemo = $("div:has('p')").attr("id");			// （内容过滤器），所选择的元素：:has()
+				console.log(hasDemo);
+				
+				var emptyDemo = $("p:empty").length;				// (内容过滤器)，选择不包含任何内容的空元素:empty
+				console.log(emptyDemo);
+				
+				var parentDemo = $("div:parent");					// （内容过滤器），选择有包含子文本节点的非空元素 :parent，它与:empty互斥关系
+				console.log(parentDemo.length);
+			});
+		</script>
+	</head>
+	<body>
+		<form name="" method="post">
+			<input type="text" />
+			<input type="text" />
+			<input type="text" />
+		</form>
+		
+		<form name="" method="post">
+			<input type="text" name="text1" style="display: none;"  />
+			<input type="text" name="text2" style="offsetWidth:0; offsetHeight:0;" />
+			<input type="text" name="text3" style="display: block;" />
+		</form>
+		
+		<p>jenny smith</p>
+		<p>jennyjones</p>
+		<p>jim bob</p>
+		
+		<div id="yay">
+			<ul>
+				<li>
+					<p>The glorious paragraph</p>
+					<p>Another, glorious paragraph</p>
+					<p>The best paragraph yet</p>
+					<p></p>
+				</li>
+			</ul>
+		</div>
+		<div id="nay">
+			<ul>
+				<li>No paragraphs here. </li>
+			</ul>
+		</div>
+	</body>
+</html>

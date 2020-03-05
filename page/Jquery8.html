@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var userInfoLength = $("[id^='user']").length;			// "*="匹配属性id的开头
+				var userInfoLength4 = $("[id$='Id']").length;			// "$="匹配属性id的结尾
+				var userNameLength = $("[id='userName']").length;		// "*="精确匹配属性值
+				var userInfoLength2 = $("[id!='userPhone']").length;	// "!="匹配属性不包含
+				var userInfoLength3 = $("[id*='Name']").length;			// "*="选择属性值中任意位置包含指定子串的元素
+				var userInfoLength5 = $("[id~='user']").length;			// 当元素的属性值是一个以空格分隔的值列表时，匹配属性值列表中包含一个特定值的元素
+				console.log(userInfoLength);
+				console.log(userInfoLength4);
+				console.log(userNameLength);
+				console.log(userInfoLength2);
+				console.log(userInfoLength3);
+				console.log(userInfoLength5);
+				
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+			<input id="userName" type="text" />
+			<input id="user userName" type="text" />
+			<input id="userId" type="text" />
+			<input id="userPhone" type="text" />
+		</form>
+	</body>
+</html>

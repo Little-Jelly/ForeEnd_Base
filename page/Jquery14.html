@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完DOM之后就执行的的动作
+			$(function(){
+				// 选择<ul>元素集合的包装对象
+				var wrapper1 = $("ul");
+				// 控制台输出该包装对象的长度
+				console.log(wrapper1.length);
+				// 获取id为techBooks的元素集合的包装对象
+				var wrapper2 = wrapper1.find("#techBooks");		// 从元素包装集合中查找与指定选择器匹配的后代元素
+				// 控制台输出该包装对象的长度
+				console.log(wrapper2.length);
+			});
+		</script>
+	</head>
+	<body>
+		<ul id="groceries">
+			<li>Eggs</li>
+			<li>Bacon</li>
+			<li>Ham</li>
+		</ul>
+		<ul id="books">
+			<li>
+				<ul id="techBooks">
+					<li>pro jQuery</li>
+					<li>JavaScript</li>
+				</ul>
+				<ul id="mathBooks">
+					<li>Calculus for the Gods</li>
+					<li>Intro to Finite State Machines</li>
+				</ul>
+			</li>
+			<li>How to win at Jeopardy</li>
+			<li>How to Cook</li>
+		</ul>
+	</body>
+</html>

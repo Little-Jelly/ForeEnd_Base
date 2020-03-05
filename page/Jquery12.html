@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				console.log( $("div span:first-child") );		// 选择每个父元素的第一个子元素
+				console.log( $("div span:last-child") );		// 选择每个父元素的最后一个子元素
+				console.log( $("div span:only-child") );		// 选择具有唯一一个子元素的元素
+				console.log( $("div span:nth-child(2)") );		// 选择每个父元素的第二个子元素
+				console.log( $("div span:nth-child(2n+1)") );	// 选择每个父元素的第奇数个子元素
+				console.log( $("div span:nth-child(even)") );	// 选择每个父元素的第偶数个子元素
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<span id="turkey">Turkey</span>
+			<span id="chicken">Chicken</span>
+			<span id="parrot">Parrot</span>
+			<span id="pigeon">Pigeon</span>
+			<span id="hawk">Hawk</span>
+		</div>
+		<div>
+			<span id="bear">Bear</span>
+			<span id="rabbit">Rabbit</span>
+			<span id="fox">Fox</span>
+			<span id="monkey">Monkey</span>
+			<span id="horse">Horse</span>
+		</div>
+		<div>
+			<span id="martian">martian</span>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var n = $("form[name$='Office1']form[name^=admin]").length;		// 复式选择器
+				var n2 = $("form[name$='Office1']").length;
+				var n3 = $("form[name$='Office1'][name^=admin]").length;		// 复式选择器，其中n与n3的的选择器作用等同
+				console.log(n , n2, n3);
+			});
+		</script>
+	</head>
+	<body>
+		<form name="adminUserOffice1" method="post" action="sendUserData.php">
+			<input type="text" id="userName" />
+			<input type="text" id="employeeId" />
+			<input type="text" id="age" />
+		</form>
+		<form name="adminUserOffice2" method="post" action="sendUserData.php">
+			<input type="text" id="userName" />
+			<input type="text" id="employeeId" />
+			<input type="text" id="age" />
+		</form>
+		<form name="regularUserOffice1" method="post" action="sendUserData.php">
+			<input type="text" id="userName" />
+			<input type="text" id="employeeId" />
+			<input type="text" id="age" />
+		</form>
+		<form name="regularUserOffice2" method="post" action="sendUserData.php">
+			<input type="text" id="userName" />
+			<input type="text" id="employeeId" />
+			<input type="text" id="age" />
+		</form>
+	</body>
+</html>

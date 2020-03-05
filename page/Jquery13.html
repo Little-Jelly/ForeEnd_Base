@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$.expr[":"].greenbg = function(element){
+					return $(element).css("background-color") === "green";
+				};
+				var n = $(":greenbg").length;
+				console.log(n);
+			});
+		</script>
+	</head>
+	<body>
+		<div style="width:10; height: 10; background-color:green;"></div>
+		<div style="width:10; height: 10; background-color:black;"></div>
+		<div style="width:10; height: 10; background-color:blue;"></div>
+	</body>
+</html>
