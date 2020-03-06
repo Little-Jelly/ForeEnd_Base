@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完成所有DOM元素之后执行的函数
+			$(function(){
+				// 设置id为"text"的元素绑定一个mouseover事件，设置自己的css：给文本加上的下划线
+				// 之后用链式方式，继续给该元素绑定一个mouseout事件，设置自己的css：去掉文本上的下划线
+				$("#text").mouseover(function(){
+					$(this).css("text-decoration", "underline");
+				}).mouseout(function(){
+					$(this).css("text-decoration", "none");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p id="text">I go to where</p>
+	</body>
+</html>

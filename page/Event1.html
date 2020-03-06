@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div1Class{
+				width: 300px;
+				height: 300px;
+				background-color: blue;
+			}
+			.div2Class{
+				width: 200px;
+				height: 200px;
+				background-color: green;
+			}
+			.div3Class{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完所有DOM元素之后，执行的函数
+			$(function(){
+				// 写一个函数f(id)，在<body>中添加一个子元素<p>，<p>的文本内容为“executing handler for div” + id
+				function f(id){
+					document.body.innerHTML += "<p>executing handler for div "+id
+					+"</p>";
+				}
+				
+				// 设置id为"div1"元素的onclick事件为f(1)
+				document.getElementById("div1").onclick = function(){
+					f(1);
+				}
+				
+				// 设置id为"div2"元素的onclick事件为f(2)
+				document.getElementById("div2").onclick = function(){
+					f(2);
+				}
+				
+				// 设置id为"divd"元素的onclick事件为f(3)
+				document.getElementById("div3").onclick = function(){
+					f(3);
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="div1" class="div1Class">
+			<div id="div2" class="div2Class">
+				<div id="div3" class="div3Class">				
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

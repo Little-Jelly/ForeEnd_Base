@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完所有DOM资源后执行的函数
+			$(function(){
+				// 对<body>中的子元素<p>进行click事件绑定，在控制台输出“ouch”，然后继续进行链式调用设置css：设置<p>元素为红色
+				$("body").delegate("p","click",function(){
+					console.log('ouch');
+				}).css("color", "red");
+				// 移除<p>元素的click事件
+				$("body").undelegate("p", "click");
+			});
+		</script>
+	</head>
+	<body>
+		<p>
+			Hit me!
+		</p>
+	</body>
+</html>

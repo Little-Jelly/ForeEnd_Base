@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM资源之后，执行的函数
+			$(function(){
+				// 绑定id为"aDiv"元素一个click事件，事件触发在控制台输出"this is the handler1"
+				$("#aDiv").bind('click',function(){
+					console.log("this is the handler1");
+				});
+				// 绑定id为"aDiv"元素一个click事件，事件触发在控制台输出"this is the handler2"
+				$("#aDiv").bind('click',function(){
+					console.log("this is the handler2");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="aDiv" class="boxDiv">
+			Press Me
+		</div>
+	</body>
+</html>

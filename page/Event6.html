@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div1 {
+				padding: 10px 10px 10px 10px;
+				width: 100px;
+				height: 100px;
+			}
+			.div1{
+				background-color: orange ;
+			}
+			.div2{
+				background-color: yellow;
+			}
+			.div3{
+				background-color: greenyellow;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 加载完成所有DOM元素之后执行的函数
+			$(function(){
+				// 设置<p>元素为隐藏
+				$("p").hide();
+				// 给class为"div1"的元素添加一个mouseover的事件：其中的子元素<p>，并设置淡入，淡出
+				$(".div1", this).mouseover(function(){
+					$(this).find("p").fadeIn().fadeOut();
+				});
+				// 给class为"div2"的元素添加一个mouseover的事件：其中的子元素<p>，并设置淡入，淡出
+				$(".div2", this).mouseover(function(){
+					$(this).find("p").fadeIn().fadeOut();
+				});
+				// 给class为"div3"的元素添加一个mouseover的事件：其中的子元素<p>，并设置淡入，淡出
+				$(".div3", this).mouseover(function(){
+					$(this).find("p").fadeIn().fadeOut();
+				});
+				
+				// 使用触发器触发mouseover事件
+				$("input").click(function(){
+					$("div").trigger("mouseover");				// 执行所有匹配的集中的元素
+//					$("div").triggerHandler("mouseover");		// 只执行第一个匹配的元素
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<p>Here test div1</p>
+		</div>
+		<div class="div2">
+			<p>Here test div2</p>
+		</div>
+		<div class="div3">
+			<p>Here test div3</p>
+		</div>
+		<input type="button" value="run with trigger" />
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div1{
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+			.div2{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.div3{
+				width: 100px;
+				height: 100px;
+				background-color: yellowgreen;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM资源之后执行的函数
+			$(function(){
+				// 对于class为"div1"的元素绑定只执行一次的触发事件，在<body>元素总追加<p>结点，其文本内容是“click div1”
+				$(".div1").one("click", function(){
+					$("body").append("<p>clicked div1</p>");
+				});
+				// 对于class为"div2"的元素绑定触发事件，在<body>元素总追加<p>结点，其文本内容是“click div2”
+				$(".div2").bind("click", function(){
+					$("body").append("<p>clicked div2</p>");
+				});
+				// 使用jQuery中的绑定事件的快捷方式，给class为"div3"的元素绑定触发事件，在<body>元素总追加<p>结点，其文本内容是“click div3”
+				$(".div3").click(function(){
+					$("body").append("<p>clicked div3</p>");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+	</body>
+</html>
