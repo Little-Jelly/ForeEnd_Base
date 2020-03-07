@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写加载完成所有DOM元素后，执行的函数
+			$(function(){
+				// 给name=validate的<input>添加点击事件
+				$('input[name="validate"]').click(function(){
+					// 清除id为msg中的信息
+					$("#msg").html("");
+					// 获取name=userName的<input>中的值到变量userName
+					var userName = $( 'input[name="userName"]' ).val();
+					// 获取name=email的<input>中的值到变量email
+					var email = $( 'input[name="email"]' ).val();
+					// 获取name=password的<input>的值到变量pass1
+					var pass1 = $( 'input[name="password"]' ).val();
+					// 获取name=chkPassword的<input>的值到变量pass2
+					var pass2 = $( 'input[name="chkPassword"]').val();
+					// userName、email、pass1、pass2四个变量都不允许出现空值
+					// 如果出现空值，则应该在id为msg的元素后面加入提示信息：All Fields are required
+					// 并将它的字体颜色设置为红色
+					// 返回false
+					var hasValue = userName && email && pass1 && pass2;
+					if( !hasValue ){
+						$("#msg").append("All Fields are required.").css("color", "red");
+						return false;
+					}
+					// 检查pass1和pass2是否完全相同，把比较结果保存到变量passwordMatch中
+					// 如果passwordMatch为false，在id为msg的元素后面加入提示信息：Passwords don't match'
+					// 并将它的字体颜色设置为红色
+					var passwordMatch = false;
+					if( pass1 === pass2 ){
+						passwordMatch = true;
+					}
+					if( !passwordMatch ){
+						$("#msg").append("<p>Passwords don't match.</p>").css("color", "red");
+						return false;
+					}				
+				});
+				// 给name=addLocation的<input>添加点击事件
+				$('input[name="addLocation"]').click(function(){
+						// <body>后添加子元素<select>，属性name=stateCombo，默认显示值为Select State
+					$("body").append("<select name='stateCombo'><option>Select State</option></select>");
+					// 禁用本按钮，避免重复点击该按钮添加重复的下拉列表框
+					$(this).attr("disable", "disable");
+					// 添加几个州名到数组states
+					var states = ["California", "Florida", "New York"];
+					// 将states中的值添加到stateCombo的选择内容集中
+					$.each(states, function(index, value) {
+						$("[name='stateCombo']").append("<option value='" + index + "'>" + value + "</option>");
+					});
+					// <body>后添加子元素<select>，属性name=cityCombo，默认显示值为Select City
+					$("body").append("<select name='cityCombo'><option>Select City</option></select>");						
+				});	
+				// 使用live()方法，给stateCombo添加点击事件
+				$("[name='stateCombo']").live("change", function(event){	/// 这个事件会报错，提示：live不是一个函数					
+					// 获取选中的州名到变量selectedState
+					var selectedState = $(this).val();	
+					// 定义一个城市数组CA_Cities
+					var CA_Cities = ["San Francisco", "Los Angeles", "Mountain View"];
+					// 定义一个城市数组FL_Cities
+					var FL_Cities = ["For Lauderdale", "Miami", "Orlando"];
+					// 定义一个城市数组NY_Cities
+					var NY_Cities = ["New York", "Buffalo", "Ithica"];
+					// 定义一个空数组cities
+					var cities = [];
+					// 如果selectedState值为0，添加CA_Cities到cities
+					// 如果selectedState值为1，添加FL_Cities到cities
+					// 如果selectedState值为2，添加NY_Cities到cities
+					if(sselectedState == 0){
+						cities = $.extend([], CA_Cities);
+					}else if(selectedState == 1){
+						cities = $.extend([], FL_Cities);
+					}else if(selectedState == 2){
+						cities = $.extend([], NY_Cities);
+					}
+					// 清除cityCombo中任何之前的值
+					$("[name='cityCombo']").empty();
+					// 将cities中的值添加到cityCombo的选择内容集中
+					$.each(cities, function(index, value) {
+						$("[name='cityCombo']").append("<option value'" + index + "'" + value + "</option>");
+					});
+				});		
+			});
+		</script>
+	</head>
+	<body>
+		<div id="msg"></div>
+		<form name="userRegistrationForm">
+			<label for="userName">User</label>
+			<input type="text" name="userName" /><br />
+			<label for="email">Email</label>
+			<input type="text" name="email" /><br />
+			<label for="password">Password</label>
+			<input type="password" name="password" /><br />
+			<label for="chkPassword">Re-enter Password</label>
+			<input type="text" name="chkPassword" /><br />
+			<input type="button" name="validate" value="Validate Inputs" />
+		</form>
+		<input type="button" name="addLocation" value="Add Location" />
+	</body>
+</html>
