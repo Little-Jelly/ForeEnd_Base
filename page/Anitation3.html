@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#message{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 20px;
+				background-color: orange;
+			}
+			#container{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 500px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM元素之后，执行的函数
+			$(function(){
+				// 给id=message的元素增加click事件
+				$("#message").click(function(e){
+					e.stopPropagation();
+					$(this).hide();
+				});
+				// 给document增加click事件
+				$(document).click(function(){
+					$("#message").show();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="message">
+			Fill out our annoying survey! (click to dismiss)
+		</div>
+	</body>
+</html>
