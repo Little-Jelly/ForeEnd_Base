@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="../css/jquery-ui.css" rel="stylesheet" />
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="../js/jquery-ui.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM资源之后，执行的函数
+			$(function(){
+				$("#tabs")
+					.tabs()
+					.find(".ui-tabs-nav")
+					.sortable({ axis: "x"});
+				$( ".tabs-bottom .ui-tabs-nav, .tab-bottom .ui-tabs-nav > *" )
+					.removeClass( "ui-corner-all ui-corner-top" )
+					.addClass( "ui-corner-bottom" );
+			});
+		</script>
+		<style type="text/css">
+			#tabs{
+				height: 200px;
+			}
+			.tabs-bottom{
+				position: relative;
+			}
+			.tabs-bottom .ui-tabs-panel{
+				height: 140px;
+				overflow: auto;
+			}
+			.tabs-bottom .ui-tabs-nav{
+				position: absolute !important;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				padding: 0 0.2em 0.2em 0;
+			}
+			.tabs-bottom .ui-tabs-nav li{
+				margin-top: -2px !important;
+				margin-bottom: 1px !important;
+				border-top: none;
+				border-bottom-width: 1px;
+			}
+			.ui-tabs-selected{
+				margin-top: -3px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tabs" class="tabs-bottom">
+			<ul>
+				<li><a href="#t1">Tech Notes</a></li>
+				<li><a href="#t2">Startup Ideas</a></li>
+				<li><a href="#t3">JS Notes</a></li>
+			</ul>
+			<div id="t1">
+				<p>Lorum Bacon</p>
+			</div>
+			<div id="t2">
+				<p>Lorum Bacon</p>
+			</div>
+			<div id="t3">
+				<p>Blah blash</p>
+			</div>
+		</div>
+	</body>
+</html>
