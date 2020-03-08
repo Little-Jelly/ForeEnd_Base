@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				width: 100px;
+				height: 100px;
+				top: 0;
+				left: 0;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM元素之后，执行的函数
+			$(function(){
+				var rect_ctx = $("canvas#rect")[0].getContext("2d");
+				rect_ctx.fillRect(0, 0, 50, 50);
+				$(document).click(function(){
+					$("#rect").animate({
+						left: '+=800px'
+					}, 200);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<canvas id="rect"></canvas>
+	</body>
+</html>

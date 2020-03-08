@@ -22,9 +22,11 @@
 			$(function(){
 				$("div#message").click(function(e){
 					e.stopPropagation();
+					// 设置淡出效果
 					$("div#message").fadeOut();
 				});
 				$(document).click(function(){
+					// 设置淡入效果
 					$("div#message").fadeIn();
 				});
 			});

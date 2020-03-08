@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color: black;
+			}
+			h1 {
+				color: yellow;
+			}
+			img#spaceship{
+				position: absolute;
+				left: 0;
+				top: 80%;
+				background-color: blue;
+			}
+			img#invader{
+				position: absolute;
+				left: 25%;
+				top: 10%;
+			}
+			div#laser{
+				position: absolute;
+				display: none;
+				left: 0;
+				top: 0;
+				width: 10px;
+				height: 70px;
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM资源之后，执行的函数
+			$(function(){
+				// 获取当前文档的宽度到变量winWidth
+				var winWidth = $(document).width();
+				// 设置持续时间到变量duration，值为1000ms
+				var duration = 1000;
+				// 跟当前文档添加一个keydown事件
+				$(document).keydown(function(event){
+					// 获取事件代码到变量keyCode
+					var keyCode = event.keyCode || event.which;
+					// 设置按键映射keyMap
+					var keyMap = { left:37, up:38, right:39, down:40 };
+					// 使用swith对keyCode进行判断，进而控制大炮的移动
+					switch (keyCode){
+						
+						// 按了左键的情况
+						case keyMap.left:
+							$("#spaceship").animate({
+								left:'-=50'
+							},200);
+							break;
+						
+						// 按了上键的情况
+						case keyMap.up:
+							// 取出飞船距离文档左侧长度到变量ufoLeft
+							var ufoLeft = $("#spaceship").offset().left;
+							// 取出飞船距离文档顶部长度到变量ufoTop
+							var ufoTop = $("#spaceship").offset().top;
+							// 使用ufoLeft和ufoTop，设置激光的相对于文档的起始位置
+							$("#laser").offset({left:(ufoLeft+87), top:(ufoTop-30)});
+							// 设置激光的css样式
+							// 设置激光发射的动画
+							$("#laser").css("display", "block")
+								.animate({top:10}, 100, function(){
+									// 取出入侵者距离文档左侧的距离
+									var invaderLeft = $("#invader").offset().left;
+									// 获取激光
+									var laserLeft = $("#laser").offset().left;
+									// 判断激光是否射中入侵者
+									if( laserLeft >= invaderLeft &&
+										laserLeft <= invaderLeft + 288 ){
+										$("#invader").hide();
+										$("body").html("<h1>Direct Hit!</h1>");
+									}
+										
+									$("#laser").offset({left:0, top:0});
+									$("#laser").css("display", "none");
+								});
+							break;
+							
+						// 按了右键的情况
+						case keyMap.right:
+							$("#spaceship").animate({
+								left: '+=50'
+							}, 200);
+							break;
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img id="spaceship" src="img/spaceship.png" />
+		<img id="invader" src="img/png.png" />
+		<div id="laser"></div>
+	</body>
+</html>

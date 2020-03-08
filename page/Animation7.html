@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img#alien{
+				position: relative;
+				left: 0;
+				background-color: blue;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript">
+			// 编写一个加载完成所有DOM资源之后，执行的函数
+			$(function(){
+				// 获取当前文档的宽度到变量winWidth
+				var winWidth = $(document).width();
+				// 设置持续事件duration为1000ms
+				var duration = 10000;
+				// 设置当前文档的点击变量
+				$(document).click(function(event){
+					// id=alien的元素添加动画
+					$("#alien").animate({
+						opacity: 0,
+						width: 10,
+						left: '+=1000px'				
+					}, duration);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img id="alien" src="../img/png.png" />
+	</body>
+</html>
