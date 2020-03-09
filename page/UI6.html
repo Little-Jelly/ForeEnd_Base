@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" href="../css/jquery-ui.css" />
+		<script type="text/javascript" src="../js/jquery-ui.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$( "#bar" ).progressbar({value: 0});
+				setTimeout( updateProgress, 100 );
+			});
+			
+			function updateProgress(){
+				var progress;
+				progress = $( "#bar" ).progressbar("option","value");
+				if( progress < 100 ){
+					$( "#bar" ).progressbar( "option", "value", progress + 1 );
+					setTimeout( updateProgress, 100 );
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="bar">			
+		</div>
+	</body>
+</html>

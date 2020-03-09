@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" href="../css/jquery-ui.css" />
+		<script type="text/javascript" src="../js/jquery-ui.min.js" ></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				$('input#mainField').datepicker({
+					appendText : '(mm/dd/yyyy)',dateFormat : 'dd/mm/yy',
+					closeText : 'X',
+					showOn : 'button',
+					currentText : 'Now',
+					numberOfMonths : [2,2],
+					selectOtherMonths : true,
+					showOtherMonths : true,
+					showWeek : true,
+					weekHeader : 'Week'
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" id="mainField" />
+	</body>
+</html>

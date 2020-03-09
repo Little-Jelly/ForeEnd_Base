@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" href="../css/jquery-ui.css" />
+		<script type="text/javascript" src="../js/jquery-ui.min.js" ></script>
+		<script type="text/javascript">
+			$(window).load(function(){
+				$(function(){
+					var stageWinners = [
+						"Eddy Merckx","Bernard Hinault",
+						"Andre Leducq","Lance Armstrong",
+						"Andre Darrigade","Mark Cavendish",
+						"Nicolas Frantz","Fran.ois Faber",
+						"Jean Alavoine","Jacques Anquetil",
+						"Rene Le Greves","Charles Pelissier",
+						"Freddy Maertens","Philippe Thys",
+						"Louis Trousselier","Gino Bartali",
+						"Mario Cipollini","Miguel Indurain",
+						"Robbie McEwen","Erik Zabel",
+						"Jean Aerts","Louison Bobel",
+						"Raffaele Di Paco","Maurice Archambaud",
+						"Charly Gaul","Walter Godefroot",
+						"Gerrie Knetemann","Antonin Magne",
+						"Henri Pelissier","Jan Raas",
+						"Joop Zoetemelk","Thor Hushovd"
+					];
+					$("#tdf").autocomplete({
+						source: stageWinners
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<label for="tags">Tags: </label>
+			<input id="tdf" />
+		</div>
+	</body>
+</html>
